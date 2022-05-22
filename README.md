@@ -3,7 +3,7 @@
 
 a tower building game using ES6 and Canvas.
 
-this version is ready to use with webxdc as well as for usage in a browser (just open index.html locally),
+this version is ready to use with webxdc as well as for usage in a browser (just open `index.html` locally),
 based on <https://github.com/iamkun/tower_game>
 
 <img src="https://user-images.githubusercontent.com/17680888/47480922-93a20c00-d864-11e8-8f7c-6d1d60184730.gif"/>
@@ -22,12 +22,11 @@ Note: Each Success or Perfect constitutes a floor.
 For example, the first Perfect awards 50 point. The second consecutive Perfect awards 75 points. 
 The third consecutive Perfect awards 100 points.  etc.
 
-<img width="350" src="https://user-images.githubusercontent.com/17680888/47473105-d9021180-d843-11e8-8c19-b6b78d86cbdf.png" />
+<img width="300" src="https://user-images.githubusercontent.com/17680888/47473105-d9021180-d843-11e8-8c19-b6b78d86cbdf.png" />
 
 
 ## Customizing
 
-Open `http://localhost:8082` in a web browser.
 To customize image and sound resource files directly replace the corresponding file under `assets` directory.
 To customize game rules modify the `option` object in `index.html`.
 
