@@ -124,3 +124,5 @@ function(failedCount) {
 ## License
 
 MIT license.
+
+Music CC-BY-SA 3.0 Matthew Pablo, Caketown, <https://opengameart.org/content/caketown-cuteplayful>
