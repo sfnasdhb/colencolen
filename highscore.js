@@ -39,9 +39,13 @@ function escapeHtml(raw) {
 
 function getAllHighscoresHtml() {
     var ret = "Top Builders:"
+    var cnt = 0
     getAllHighscores().forEach(item => {
-        const name = item.name.length > 17 ? item.name.substring(0, 15) + '…' : item.name;
-        ret += "<br>" + escapeHtml(name) + " - " + item.score
+        if (cnt < 5) {
+            const name = item.name.length > 17 ? item.name.substring(0, 15) + '…' : item.name;
+            ret += "<br>" + escapeHtml(name) + " - " + item.score
+            cnt += 1
+        }
     });
     return ret;
 }
