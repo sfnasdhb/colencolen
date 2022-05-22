@@ -8,6 +8,8 @@ based on <https://github.com/iamkun/tower_game>
 
 <img src="https://user-images.githubusercontent.com/17680888/47480922-93a20c00-d864-11e8-8f7c-6d1d60184730.gif"/>
 
+[Download .xdc from Release Assets](https://github.com/webxdc/tower-builder/releases)
+
 [Online Demo](https://webxdc.github.io/tower-builder/)
 
 ## Game Rule
