@@ -19,7 +19,8 @@ function updateSelfHighscore(score) {
     if (setHighscoreFor(addr, name, score)) {
         const info = name + ' scored ' + score + ' in Tower Builder!';
         const payload = {addr: addr, name: name, score: score};
-        window.webxdc.sendUpdate({payload: payload, info: info}, info);
+        const summary = 'Top builder is ' + getAllHighscores().shift().name;
+        window.webxdc.sendUpdate({payload: payload, summary: summary, info: info}, info);
     }
 }
 
@@ -38,7 +39,7 @@ function escapeHtml(raw) {
 }
 
 function getAllHighscoresHtml() {
-    var ret = "Top Builders:"
+    var ret = "Great Builders:"
     var cnt = 0
     getAllHighscores().forEach(item => {
         if (cnt < 5) {
