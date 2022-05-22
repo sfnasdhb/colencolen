@@ -166,22 +166,13 @@
   }
 
   // game init with option
-  function gameReady() {
-    game = TowerGame(option)
-    game.load(function () {
-      game.init()
-      setTimeout(function () {
-        game.playBgm()
-      })
-    }, updateLoading)
-  }
-
-  var isWechat = navigator.userAgent.toLowerCase().indexOf("micromessenger") !== -1
-  if (isWechat) {
-    document.addEventListener("WeixinJSBridgeReady", gameReady, false)
-  } else {
-    gameReady()
-  }
+  game = TowerGame(option)
+  game.load(function () {
+    game.init()
+    setTimeout(function () {
+      game.playBgm()
+    })
+  }, updateLoading);
 
   function indexHide() {
     $('.landing .action-1').addClass('slideTop')
