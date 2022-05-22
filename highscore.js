@@ -17,7 +17,7 @@ function updateSelfHighscore(score) {
     const addr = window.webxdc.selfAddr;
     const name = window.webxdc.selfName;
     if (setHighscoreFor(addr, name, score)) {
-        const info = name + ' scored ' + score + ' in Tower Building!';
+        const info = name + ' scored ' + score + ' in Tower Builder!';
         const payload = {addr: addr, name: name, score: score};
         window.webxdc.sendUpdate({payload: payload, info: info}, info);
     }

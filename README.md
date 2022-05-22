@@ -2,7 +2,7 @@
 
 English | [简体中文](./README.zh-CN.md)
 
-<h1 align="center">Tower Building Game</h1>
+<h1 align="center">Tower Builder Game</h1>
 <p align="center"><img src="https://o2qq673j2.qnssl.com/tower-loading.gif"/></p>
 
 > a tower building game based on ES6 and Canvas (Tower Bloxx Deluxe Skyscraper)
