@@ -43,16 +43,15 @@
         .clear{clear:both}
         .loading{background:#000; height:100%;width:100%}
         .content{height:100vh;margin:0 auto;position:relative}
-        .landing .title{width:5.7%}
         .landing .action-2{position:absolute;bottom:.2rem;width:100%}
         .landing .start{width:65%}
+        #highscorelist {margin-top:.5em; font-size:.3em; font-weight:bold; color:white}
         .slideTop{-webkit-animation:st 1s ease-in-out;animation:st 1s ease-in-out}
         @-webkit-keyframes st{0%{transform:translateZ(0)}100%{transform:translate3d(0,-100%,0)}}
         @keyframes st{0%{transform:translateZ(0)}100%{transform:translate3d(0,-100%,0)}}
         .slideBottom{-webkit-animation:sb 1s ease-in-out;animation:sb 1s ease-in-out}
         @-webkit-keyframes sb{0%{transform:translateZ(0)}100%{transform:translate3d(0,200%,0)}}
         @keyframes sb{0%{transform:translateZ(0)}100%{transform:translate3d(0,200%,0)}}
-        .swing{-webkit-animation:sw 2s ease-in-out alternate infinite;animation:sw 2s ease-in-out alternate infinite}
         @-webkit-keyframes sw{0%{transform:rotate(5deg);transform-origin:top center}100%{transform:rotate(-5deg);transform-origin:top center}}
         @keyframes sw{0%{transform:rotate(5deg);transform-origin:top center}100%{transform:rotate(-5deg);transform-origin:top center}}
         .modal.mask{background-color:#000;opacity:.6;position:fixed;height:100%;width:100%;top:0;left:0}
@@ -78,7 +77,7 @@
     <div class="loading">
     </div>
     <div class="landing hide">
-        <div class="action-1"><img src="./assets/hook.png" class="title swing"></div>
+        <div class="action-1"><div id="highscorelist"></div></div>
         <div class="action-2"><img id="start" src="./assets/main-index-start.png" class="start"></div>
     </div>
     <div id="modal" class="modal hide">
@@ -99,6 +98,7 @@
     </div>
 </div>
 <script src="./webxdc.js"></script>
+<script src="./highscore.js"></script>
 <script src="./dist/main.js"></script>
 <script src="./assets/zepto-1.1.6.min.js"></script>
 <script>
@@ -161,7 +161,10 @@
     },
     setGameFailed: function (f) {
       $('#score').text(score)
-      if (f >= 3) overShowOver()
+      if (f >= 3) {
+          overShowOver()
+          updateSelfHighscore(score)
+      }
     }
   }
 
@@ -202,6 +205,14 @@
     domReady = true
     hideLoading()
   }, false);
+
+  window.webxdc.setUpdateListener((update) => {
+      const player = update.payload
+      setHighscoreFor(player.addr, player.name, player.score)
+      if (update.serial === update.max_serial) {
+          $('#highscorelist').html(getAllHighscoresHtml())
+      }
+  }, 0);
 </script>
 </body>
 </html>
