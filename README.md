@@ -6,11 +6,12 @@ a tower building game using ES6 and Canvas.
 this version is ready to use with webxdc as well as for usage in a browser (just open `index.html` locally),
 based on <https://github.com/iamkun/tower_game>
 
-<img src="https://user-images.githubusercontent.com/17680888/47480922-93a20c00-d864-11e8-8f7c-6d1d60184730.gif"/>
+<img src=https://user-images.githubusercontent.com/9800740/170023308-b88fe76b-495a-46d4-8224-a21304aa7c2f.gif>
 
 [Download .xdc from Release Assets](https://github.com/webxdc/tower-builder/releases), attach to a Delta Chat group and share highscores there!
 
 [Online Demo](https://webxdc.github.io/tower-builder/)
+
 
 ## Game Rule
 
@@ -25,7 +26,7 @@ Note: Each Success or Perfect constitutes a floor.
 For example, the first Perfect awards 50 point. The second consecutive Perfect awards 75 points. 
 The third consecutive Perfect awards 100 points.  etc.
 
-<img width="300" src="https://user-images.githubusercontent.com/17680888/47473105-d9021180-d843-11e8-8c19-b6b78d86cbdf.png" />
+<img width=225 src=https://user-images.githubusercontent.com/9800740/170023404-ad9ebf93-4eab-4e56-815f-bd66a3325e5d.png>
 
 
 ## Customizing
@@ -34,6 +35,7 @@ To customize image and sound resource files directly replace the corresponding f
 To customize game rules modify the `option` object in `index.html`.
 
 Use following table of `option` constants to complete customization of game rules.
+
 
 **Note: all constants are optionally included**
 
@@ -51,6 +53,7 @@ Use following table of `option` constants to complete customization of game rule
 | <a href="#setgamescore">setGameScore</a> | function | hook for current score |
 | <a href="#setgamesuccess">setGameSuccess</a> | function | hook for number of current succesful game |
 | <a href="#setgamefailed">setGameFailed</a> | function | hook for number of current failed game |
+
 
 #### hookSpeed
 Speed of hook's movement
