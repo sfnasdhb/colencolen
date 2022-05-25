@@ -29,6 +29,15 @@ The third consecutive Perfect awards 100 points.  etc.
 <img width=225 src=https://user-images.githubusercontent.com/9800740/170023404-ad9ebf93-4eab-4e56-815f-bd66a3325e5d.png>
 
 
+## Building
+
+to create a `.xdc` file that can be attached to a Delta Chat group, execute:
+
+```sh
+./create-xdc.sh
+```
+
+
 ## Customizing
 
 To customize image and sound resource files directly replace the corresponding file under `assets` directory.
