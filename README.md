@@ -1,5 +1,6 @@
+# MOVED TO <https://codeberg.org/r10s/tower-builder>
 
-# Tower Builder Game
+## Tower Builder Game
 
 a tower building game using ES6 and Canvas.
 
