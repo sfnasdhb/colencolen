@@ -217,7 +217,7 @@ const drawSwingBlock = (instance, engine) => {
 const drawBlock = (instance, engine) => {
   const { perfect } = instance
   const bl = engine.getImg(perfect ? 'block-perfect' : 'block')
-  engine.ctx.drawImage(bl, instance.x, instance.y, bl.width, bl.height)
+  engine.ctx.drawImage(bl, instance.x, instance.y, instance.width, instance.height)
 }
 
 const drawRotatedBlock = (instance, engine) => {
