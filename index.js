@@ -1,20 +1,30 @@
-const express = require('express')
-const path = require('path')
-const opn = require('opn')
+const express = require('express');
+const path = require('path');
 
-const server = express()
-const host = 'http://localhost:8082'
-server.use('/assets', express.static(path.resolve(__dirname, './assets')))
-server.use('/dist', express.static(path.resolve(__dirname, './dist')))
+const app = express();
+const PORT = process.env.PORT || 8082;
+const host = `http://localhost:${PORT}`;
 
-server.get('*', (req, res) => {
+// Static assets
+app.use('/assets', express.static(path.resolve(__dirname, './assets')));
+app.use('/dist', express.static(path.resolve(__dirname, './dist')));
+
+// Serve index.html for all routes
+app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, './index.html'));
-})
+});
 
-server.listen(8082, () => {
-  console.log(`server started at ${host}`)
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server started at ${host}`);
+  
+  // Only open browser in development
   if (process.env.NODE_ENV !== 'production') {
-    const opn = require('opn');
-    opn(host)
+    try {
+      const opn = require('opn');
+      opn(host);
+    } catch (e) {
+      console.log('opn failed or not installed. Skipping browser launch.');
+    }
   }
-})
+});
