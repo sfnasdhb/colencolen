@@ -13,5 +13,8 @@ server.get('*', (req, res) => {
 
 server.listen(8082, () => {
   console.log(`server started at ${host}`)
-  opn(host)
+  if (process.env.NODE_ENV !== 'production') {
+    const opn = require('opn');
+    opn(host)
+  }
 })
